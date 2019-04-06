@@ -1,0 +1,38 @@
+{
+  "name": "Playing Status",
+  "temp": "",
+  "event-type": "1",
+  "_id": "AbmgY",
+  "actions": [
+    {
+      "info": "0",
+      "find": "552721221574328321",
+      "storage": "1",
+      "varName": "Discord Bot Galaxy",
+      "name": "Find Server"
+    },
+    {
+      "server": "1",
+      "varName": "Discord Bot Galaxy",
+      "info": "36",
+      "storage": "1",
+      "varName2": "Member Count",
+      "name": "Store Server Info"
+    },
+    {
+      "FirstNumber": "${tempVars(\"Member Count\")}",
+      "info": "1",
+      "SecondNumber": "1",
+      "storage": "1",
+      "varName": "Real Member Count",
+      "name": "Basic Math Operation"
+    },
+    {
+      "activity": "3",
+      "nameText": "on Discord Bot Galaxy! | ${tempVars(\"Real Member Count\")} Users",
+      "url": "https://twitch.tv/landonpro1",
+      "stat": "0",
+      "name": "Set Bot Activity"
+    }
+  ]
+}

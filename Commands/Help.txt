@@ -1,0 +1,320 @@
+{
+  "name": "Help",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "XMYwN",
+  "actions": [
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "params",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "4",
+      "name": "Check Parameters"
+    },
+    {
+      "title": "Commands",
+      "author": "",
+      "color": "GREEN",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "commandsEmbed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "commandsEmbed",
+      "message": "__**Commands for ${bot.user.username}**__\n\n``submit``, ``apply``, ``botinfo``, ``botprefix``, ``botcertify``, ``botdescription``\n\n**To get information on a command, type ``!help (command)``**",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "commandsEmbed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "params",
+      "comparison": "6",
+      "value": "botinfo",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "4",
+      "name": "Check Variable"
+    },
+    {
+      "title": "Help",
+      "author": "",
+      "color": "BLUE",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "message": "**Command:** ``botinfo``\n\n**Command restriction:** ``None``\n\n**Command information:** ``Gives information on the mentioned bot.``\n\n**How to use:** ``!botinfo @bot#0001``",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "params",
+      "comparison": "6",
+      "value": "botprefix",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "4",
+      "name": "Check Variable"
+    },
+    {
+      "title": "Help",
+      "author": "",
+      "color": "BLUE",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "message": "**Command:** ``botprefix``\n\n**Command restriction:** ``Staff only``\n\n**Command information:** ``Sets the prefix for a bot shown on the botinfo command``\n\n**How to use:** ``!botprefix @bot#0001 [new prefix]``",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "params",
+      "comparison": "6",
+      "value": "botcertify",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "4",
+      "name": "Check Variable"
+    },
+    {
+      "title": "Help",
+      "author": "",
+      "color": "BLUE",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "message": "**Command:** ``botcertify``\n\n**Command restriction:** ``Staff only``\n\n**Command information:** ``Gives a bot the certification status!``\n\n**How to use:** ``!botcertify @bot#0001``",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "params",
+      "comparison": "6",
+      "value": "botdescription",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "4",
+      "name": "Check Variable"
+    },
+    {
+      "title": "Help",
+      "author": "",
+      "color": "BLUE",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "message": "**Command:** ``botdescription``\n\n**Command restriction:** ``Staff only``\n\n**Command information:** ``Sets the description for a bot shown on the botinfo command``\n\n**How to use:** ``!botdescription @bot#0001 [new description]``",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "params",
+      "comparison": "6",
+      "value": "submit",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "4",
+      "name": "Check Variable"
+    },
+    {
+      "title": "Help",
+      "author": "",
+      "color": "BLUE",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "message": "**Command:** ``submit``\n\n**Command restriction:** ``None``\n\n**Command information:** ``Submit your bot to bot approvers!``\n\n**How to use:** ``!submit``",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "storage": "1",
+      "varName": "params",
+      "comparison": "6",
+      "value": "apply",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "4",
+      "name": "Check Variable"
+    },
+    {
+      "title": "Help",
+      "author": "",
+      "color": "BLUE",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "message": "**Command:** ``apply``\n\n**Command restriction:** ``None``\n\n**Command information:** ``Apply for your bot to be certified!``\n\n**How to use:** ``!apply @bot#0001``",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "commandInfoHelp",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Uh, the command information you wanted to see was for a command that doesn't exist. Try again!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "comType": "0"
+}

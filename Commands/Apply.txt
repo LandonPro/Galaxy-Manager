@@ -1,0 +1,178 @@
+{
+  "name": "Apply",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "GPUcC",
+  "actions": [
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "bot to apply",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "0",
+      "iftrue": "0",
+      "iftrueVal": "2",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You need to mention the bot that you would like to apply for certification.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "bot to apply",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "The mentioned user **__must__** be a bot, of course. How are users supposed to be tested and certified? :thinking:",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "bot to apply",
+      "dataName": "CertificationPending",
+      "comparison": "1",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Member Data"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "That bot has already been submitted for certification!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "find": "543884690495504384",
+      "storage": "1",
+      "varName": "Bot Testing Server",
+      "name": "Find Server"
+    },
+    {
+      "server": "1",
+      "varName": "Bot Testing Server",
+      "name": "Change Server"
+    },
+    {
+      "info": "0",
+      "find": "562861538713534474",
+      "storage": "1",
+      "varName": "certification requests channel",
+      "name": "Find Channel"
+    },
+    {
+      "member": "2",
+      "varName": "bot to apply",
+      "info": "1",
+      "storage": "1",
+      "varName2": "botID",
+      "name": "Store Member Info"
+    },
+    {
+      "title": "Certification Request",
+      "author": "",
+      "color": "GREEN",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Bot",
+      "message": "${tempVars(\"bot to apply\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Requested By",
+      "message": "${member}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "fieldName": "Bot Invite",
+      "message": "**[Click here!](https://discordapp.com/oauth2/authorize?client_id=${tempVars(\"botID\")}&scope=bot&permissions=0)**",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "embed",
+      "channel": "5",
+      "varName2": "certification requests channel",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "name": "Change Server"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Your bot, ${tempVars(\"bot to apply\")}, has been submitted for certification!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "member": "2",
+      "varName": "bot to apply",
+      "dataName": "CertificationPending",
+      "changeType": "0",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ]
+}

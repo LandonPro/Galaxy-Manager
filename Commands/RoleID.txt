@@ -1,0 +1,39 @@
+{
+  "name": "RoleID",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "XxFMg",
+  "actions": [
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "role name",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "find": "${tempVars(\"role name\")}",
+      "storage": "1",
+      "varName": "role",
+      "name": "Find Role"
+    },
+    {
+      "role": "3",
+      "varName": "role",
+      "info": "1",
+      "storage": "1",
+      "varName2": "role ID",
+      "name": "Store Role Info"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "That role's ID is:\n\n```${tempVars(\"role ID\")}```",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}

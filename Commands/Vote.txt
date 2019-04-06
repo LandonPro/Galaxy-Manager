@@ -1,0 +1,168 @@
+{
+  "name": "Vote",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "cmjPh",
+  "actions": [
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const fs = require(\"fs\"), path = require(\"path\"), mkd = require('mkdirp');\nconst search = Actions.getLocalFile(path.join( \"data\", \"members\", member.id))\nconst filePath = path.join(search ,\"cooldown.json\");\nlet file = {};\n\nmkd(search);\n\nif (fs.existsSync(filePath)) {\n  file = require(filePath);\n  file.vote;\n}",
+      "storage": "1",
+      "varName": "cooldown",
+      "name": "Run Script"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "if (tempVars(\"cooldown\")) {\nconst value = Date.parse(new Date()) / 1000 - tempVars(\"cooldown\");\nvalue >= 0 ? \"true\" : \"false\";\n}",
+      "storage": "1",
+      "varName": "status",
+      "name": "Run Script"
+    },
+    {
+      "storage": "1",
+      "varName": "status",
+      "comparison": "1",
+      "value": "\"false\"",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "2",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": ":x: Please wait `${this.generateTimeString(tempVars(\"cooldown\") - parseInt(Date.now() / 1000))}` before voting again.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "mention",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Please mention a bot.",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "2",
+      "varName": "mention",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You have to mention a bot, not a human!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "message": "0",
+      "value": "7200",
+      "whattodo": "0",
+      "call": "15",
+      "name": "Adjust Time Restriction"
+    },
+    {
+      "member": "2",
+      "varName": "mention",
+      "dataName": "Votes",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "votes",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "2",
+      "varName": "mention",
+      "dataName": "TotalVotes",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "totalVotes",
+      "name": "Store Member Data"
+    },
+    {
+      "member": "2",
+      "varName": "mention",
+      "dataName": "Votes",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "member": "2",
+      "varName": "mention",
+      "dataName": "TotalVotes",
+      "changeType": "1",
+      "value": "1",
+      "name": "Control Member Data"
+    },
+    {
+      "behavior": "0",
+      "interpretation": "0",
+      "code": "const fs = require('fs'), path = require(\"path\"), mkd = require('mkdirp');\nconst search = Actions.getLocalFile(path.join( \"data\", \"members\", member.id))\nconst filePath = path.join(search ,\"cooldown.json\");\nlet file = {};\n\nmkd(search);\n\nif (fs.existsSync(filePath)) {\n  file = require(filePath);\n}\n\nfile.vote = parseInt((Date.parse(new Date()) / 1000) + 7200);\n\nfs.writeFileSync(filePath, JSON.stringify(file, null, 2));",
+      "storage": "0",
+      "varName": "",
+      "name": "Run Script"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You have voted for ${tempVars(\"mention\")}! Come back in **2 hours** to vote for another bot!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You can only vote for bots every 2 hours. Please try again later!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "comType": "0"
+}

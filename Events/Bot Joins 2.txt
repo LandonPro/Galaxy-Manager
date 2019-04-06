@@ -1,0 +1,33 @@
+{
+  "name": "Bot Joins 2",
+  "temp": "mem",
+  "event-type": "6",
+  "_id": "EZjYa",
+  "actions": [
+    {
+      "member": "2",
+      "varName": "mem",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "1",
+      "iffalseVal": "",
+      "name": "Check If Member"
+    },
+    {
+      "info": "1",
+      "find": "561584910402322432",
+      "storage": "1",
+      "varName": "bot role",
+      "name": "Find Role"
+    },
+    {
+      "member": "2",
+      "varName2": "mem",
+      "role": "3",
+      "varName": "bot role",
+      "name": "Add Member Role"
+    }
+  ]
+}

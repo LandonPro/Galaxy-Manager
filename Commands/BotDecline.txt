@@ -1,0 +1,211 @@
+{
+  "name": "BotDecline",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "THxbM",
+  "actions": [
+    {
+      "info": "0",
+      "find": "552997318975160342",
+      "storage": "1",
+      "varName": "Bot Approver",
+      "name": "Find Role"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "Bot Approver",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check If Member has Role"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "You need to be a **Bot Approver** to call this command!",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "Bot Developer",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "0",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "Bot",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "2",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "BotDev",
+      "name": "Store Command Params"
+    },
+    {
+      "member": "2",
+      "varName": "BotDev",
+      "info": "0",
+      "varName2": "",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check If Member"
+    },
+    {
+      "info": "2",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "BotDev",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "0",
+      "comparison": "2",
+      "value": "1",
+      "iftrue": "3",
+      "iftrueVal": "2",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Wait! Hold on a second! **You did not use the correct usage!**\n\n**__Usage:__**\n\n``!botapprove @BotDeveloper#0001 @Bot#0001``\n``!botdecline @BotDeveloper#0001 @Bot#0001``",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "infoIndex": "3",
+      "storage": "1",
+      "varName": "Declined Reason",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "0",
+      "comparison": "1",
+      "value": "4",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "1",
+      "name": "Check Parameters"
+    },
+    {
+      "storage": "1",
+      "varName": "Declined Reason",
+      "changeType": "0",
+      "value": "\"Reason not stated.\"",
+      "name": "Control Variable"
+    },
+    {
+      "info": "1",
+      "find": "logging",
+      "storage": "1",
+      "varName": "Logging Channel",
+      "name": "Find Channel"
+    },
+    {
+      "info": "1",
+      "find": "logs",
+      "storage": "1",
+      "varName": "Logs Channel",
+      "name": "Find Channel"
+    },
+    {
+      "channel": "5",
+      "varName": "Logging Channel",
+      "message": "The bot ${tempVars(\"Bot\")}, developed by ${tempVars(\"Bot Developer\")}, has been **declined** by ${member}! :cry:",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "title": "Bot Declined",
+      "author": "",
+      "color": "RED",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "Embed Message (Logs)",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed Message (Logs)",
+      "message": "A bot has been **declined**. :cry:\n\nBot Developer: ${tempVars(\"Bot Developer\")}\nDiscord Bot: ${tempVars(\"Bot\")}\n\n__**Reason**__\n```${tempVars(\"Declined Reason\")}```\n\n**Well... that's one bot that won't be added right now...**",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "Embed Message (Logs)",
+      "channel": "5",
+      "varName2": "Logs Channel",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "title": "",
+      "author": "",
+      "color": "GREEN",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "Direct Message [Embed]",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Direct Message [Embed]",
+      "message": "Hello! Your bot, ${tempVars(\"Bot\")}, has been **declined** by ${member} on **Discord Bot Galaxy** :sob:\n\n**__Reason__**\n```${tempVars(\"Declined Reason\")}```\n\n**You can attempt to submit your bot again, but be sure to check the reason for it being declined if there is a reason stated.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "Direct Message [Embed]",
+      "channel": "5",
+      "varName2": "BotDev",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Well, you ended up here somehow. :thinking:",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ],
+  "comType": "0"
+}
